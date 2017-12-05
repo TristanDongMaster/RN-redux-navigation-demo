@@ -18,6 +18,14 @@ class Screen1View extends Component {
     this.props.navigation.dispatch(navigateToScreen2);
   };
 
+  navigate3 = () => {
+    const navigateToScreen3 = NavigationActions.navigate({
+      routeName: "screen3",
+      params: { name: "Shubhnik3333" }
+    });
+    this.props.navigation.dispatch(navigateToScreen3);
+  };
+
   render() {
     const { counterCount, incrementAction, decrementAction } = this.props;
     return (
@@ -62,6 +70,18 @@ class Screen1View extends Component {
         >
           <Text style={{ fontSize: 23, fontWeight: "600", color: "white" }}>
             Screen2
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            paddingVertical: 15,
+            paddingHorizontal: 40,
+            backgroundColor: "indigo"
+          }}
+          onPress={this.navigate3}
+        >
+          <Text style={{ fontSize: 23, fontWeight: "600", color: "white" }}>
+            Screen3
           </Text>
         </TouchableOpacity>
       </View>
